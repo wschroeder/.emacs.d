@@ -56,8 +56,6 @@
       kept-old-versions 5    ; and how many of the old
       )
 
-(setq auto-save-file-name-transforms `(("." ,(concat user-emacs-directory "backups"))))
-
 (mapc (lambda (custom-init-package)
         (load (concat "~/.emacs.d/" custom-init-package ".el")))
       '("auto-complete"
@@ -66,6 +64,7 @@
         "clojure"
         "color-theme"
         "elisp"
+        "elixir"
         "evil"
         "flycheck"))
 

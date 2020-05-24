@@ -20,6 +20,7 @@
    (quote
     ("f9aede508e587fe21bcfc0a85e1ec7d27312d9587e686a6f5afdbb0d220eab50" default)))
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
@@ -28,8 +29,12 @@
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
+ '(show-trailing-whitespace t)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(whitespace-style
+   (quote
+    (face trailing tabs indentation space-after-tab space-before-tab tab-mark)))
  '(woman-bold-headings t)
  '(woman-fill-column 100)
  '(woman-fill-frame t))
@@ -43,13 +48,24 @@
 
 (server-start)
 
-(mapc (lambda (custom-init-package)
-	(load (concat "~/.emacs.d/" custom-init-package ".el")))
-      '("auto-complete"
-	"auto-highlight-symbol"
-	"beacon"
-	"clojure"
-	"color-theme"
-	"evil"
-	"flycheck"))
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+      backup-by-copying t    ; Don't delink hardlinks
+      version-control t      ; Use version numbers on backups
+      delete-old-versions t  ; Automatically delete excess backups
+      kept-new-versions 20   ; how many of the newest versions to keep
+      kept-old-versions 5    ; and how many of the old
+      )
 
+(setq auto-save-file-name-transforms `(("." ,(concat user-emacs-directory "backups"))))
+
+(mapc (lambda (custom-init-package)
+        (load (concat "~/.emacs.d/" custom-init-package ".el")))
+      '("auto-complete"
+        "auto-highlight-symbol"
+        "beacon"
+        "clojure"
+        "color-theme"
+        "evil"
+        "flycheck"))
+
+(add-hook 'prog-mode-hook 'linum-mode)

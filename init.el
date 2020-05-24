@@ -65,6 +65,7 @@
         "beacon"
         "clojure"
         "color-theme"
+        "elisp"
         "evil"
         "flycheck"))
 

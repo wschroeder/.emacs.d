@@ -4,8 +4,8 @@
 
 ;; Set frame size
 (when window-system
-  (setq default-frame-alist `((width . 188)
-                              (height . 53))))
+  (setq default-frame-alist `((width . 160)
+                              (height . 47))))
 
 (load "~/.emacs.d/packages.el")
 (aggressive-indent-global-mode t)

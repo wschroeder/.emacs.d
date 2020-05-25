@@ -6,6 +6,7 @@
 
 (require 'package)
 
+(add-to-list 'load-path "~/.emacs.d/more-packages")
 (package-initialize)
 
 (unless package-archive-contents
@@ -24,6 +25,7 @@
                    flycheck
                    flycheck-clojure
                    flycheck-pos-tip
+                   jq-mode
                    kibit-helper
                    magit
                    markdown-mode

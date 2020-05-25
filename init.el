@@ -37,7 +37,16 @@
     (face trailing tabs indentation space-after-tab space-before-tab tab-mark)))
  '(woman-bold-headings t)
  '(woman-fill-column 100)
- '(woman-fill-frame t))
+ '(woman-fill-frame t)
+ `(backup-directory-alist (list (cons "." ,(concat user-emacs-directory "backups"))))
+ '(backup-by-copying t)    ; Don't delink hardlinks
+ '(version-control t)      ; Use version numbers on backups
+ '(delete-old-versions t)  ; Automatically delete excess backups
+ '(kept-new-versions 20)   ; how many of the newest versions to keep
+ '(kept-old-versions 5)    ; and how many of the old
+ `(auto-save-file-name-transforms (list (list "^.*/\\([^/]+\\)$" ,(concat user-emacs-directory "backups/\\1"))))
+ '(create-lockfiles nil)
+ )
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -47,14 +56,6 @@
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Fira Code")))))
 
 (server-start)
-
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
-      backup-by-copying t    ; Don't delink hardlinks
-      version-control t      ; Use version numbers on backups
-      delete-old-versions t  ; Automatically delete excess backups
-      kept-new-versions 20   ; how many of the newest versions to keep
-      kept-old-versions 5    ; and how many of the old
-      )
 
 (mapc (lambda (custom-init-package)
         (load (concat "~/.emacs.d/" custom-init-package ".el")))

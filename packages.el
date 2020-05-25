@@ -28,6 +28,7 @@
                    magit
                    markdown-mode
                    monokai-theme
+                   multiple-cursors
                    neotree
                    paredit
                    projectile

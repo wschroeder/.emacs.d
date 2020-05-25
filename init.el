@@ -67,6 +67,7 @@
         "elisp"
         "elixir"
         "evil"
-        "flycheck"))
+        "flycheck"
+        "multiple-cursors"))
 
 (add-hook 'prog-mode-hook 'linum-mode)

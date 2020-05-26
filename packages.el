@@ -12,8 +12,7 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(dolist (package '(aggressive-indent
-                   alchemist
+(dolist (package '(alchemist
                    auto-complete
                    auto-highlight-symbol
                    beacon

@@ -9,7 +9,6 @@
   (add-to-list 'exec-path "/usr/local/bin"))
 
 (load "~/.emacs.d/packages.el")
-(aggressive-indent-global-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -19,7 +18,7 @@
  '(auto-save-file-name-transforms (list (list "^.*/\\([^/]+\\)$" "~/.emacs.d/backups/\\1")))
  '(backup-by-copying t)
  '(backup-directory-alist (list (cons "." "~/.emacs.d/backups")))
- '(column-number-mode 1)
+ '(column-number-mode t)
  '(create-lockfiles nil)
  '(custom-safe-themes
    (quote
@@ -34,6 +33,7 @@
  '(package-selected-packages
    (quote
     (yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+ '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)

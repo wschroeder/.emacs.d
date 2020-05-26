@@ -69,6 +69,7 @@
         "evil"
         "flycheck"
         "multiple-cursors"
+        "neotree"
         "restclient"))
 
 (add-hook 'prog-mode-hook 'linum-mode)

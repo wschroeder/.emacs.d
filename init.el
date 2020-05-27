@@ -24,12 +24,21 @@
    (quote
     ("f9aede508e587fe21bcfc0a85e1ec7d27312d9587e686a6f5afdbb0d220eab50" default)))
  '(delete-old-versions t)
+ '(fill-column 120)
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(kept-new-versions 20)
  '(kept-old-versions 5)
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
+ '(org-babel-load-languages
+   (quote
+    ((emacs-lisp . t)
+     (shell . t)
+     (dot . t)
+     (plantuml . t)
+     (python . t))))
+ '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
     (yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
@@ -68,6 +77,7 @@
 (global-auto-highlight-symbol-mode t)
 (global-whitespace-mode t)
 (beacon-mode t)
+(yas-global-mode t)
 
 ;; Set modes to files
 (add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))

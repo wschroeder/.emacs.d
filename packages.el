@@ -19,6 +19,7 @@
                    cider
                    clojure-mode
                    clj-refactor
+                   deft
                    dot-mode
                    elixir-mode
                    evil

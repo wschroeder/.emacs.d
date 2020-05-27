@@ -41,7 +41,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -86,6 +86,17 @@
 (define-key ac-completing-map [return] nil) ; no enter (1.)
 (define-key ac-completing-map "\r" nil) ; no enter (2.)
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
+
+;; Deft config
+(setq deft-default-extension "md")
+(defun new-log-for-today ()
+  (interactive)
+  (let ((deft-default-extension "org"))
+    (execute-kbd-macro (kbd (concat "TODO:" (format-time-string "%F"))))
+    (deft-new-file)))
+(defun setup-deft-mode ()
+  (local-set-key (kbd "C-c C-n") 'new-log-for-today))
+(add-hook 'deft-mode-hook 'setup-deft-mode)
 
 ;; Hooks
 (mapc (lambda (hook) (add-hook hook 'paredit-mode))

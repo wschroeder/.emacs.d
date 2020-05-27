@@ -32,13 +32,14 @@
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
    (quote
-    (yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(show-trailing-whitespace t)
  '(tool-bar-mode nil)
+ '(truncate-lines t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(version-control t)
  '(whitespace-style
@@ -57,19 +58,46 @@
 
 (server-start)
 
-(mapc (lambda (custom-init-package)
-        (load (concat "~/.emacs.d/" custom-init-package ".el")))
-      '("auto-complete"
-        "auto-highlight-symbol"
-        "beacon"
-        "clojure"
-        "color-theme"
-        "elisp"
-        "elixir"
-        "evil"
-        "flycheck"
-        "multiple-cursors"
-        "neotree"
-        "restclient"))
+(require 'auto-complete)
+(require 'auto-highlight-symbol)
+
+(load-theme 'monokai t)
+
+;; Modes
+(global-flycheck-mode t)
+(global-auto-highlight-symbol-mode t)
+(global-whitespace-mode t)
+(beacon-mode t)
+
+;; Set modes to files
+(add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))
+
+;; Autocomplete config
+(define-key ac-completing-map [return] nil) ; no enter (1.)
+(define-key ac-completing-map "\r" nil) ; no enter (2.)
+(define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
+
+;; Hooks
+(mapc (lambda (hook) (add-hook hook 'paredit-mode))
+      '(clojure-mode-hook
+        emacs-lisp-mode-hook))
+(mapc (lambda (hook) (add-hook hook 'alchemist-mode))
+      '(elixir-mode-hook
+        company-mode))
+
+(add-hook 'restclient-mode-hook
+          #'(lambda ()
+              (require 'restclient-jq)
+              (setq jq-interactive-command (locate-file "jq" exec-path))))
 
 (add-hook 'prog-mode-hook 'linum-mode)
+
+;; Custom Keybindings
+(global-set-key (kbd "C-x x") 'evil-mode)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-;") 'mc/mark-next-like-this-word)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key [f8] 'neotree-toggle)
+

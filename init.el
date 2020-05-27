@@ -44,7 +44,8 @@
      (shell . t)
      (dot . t)
      (plantuml . t)
-     (python . t))))
+     (python . t)
+     (sql . t))))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
@@ -80,8 +81,9 @@
 (load-theme 'monokai t)
 
 ;; Modes
-(global-flycheck-mode t)
 (global-auto-highlight-symbol-mode t)
+(global-flycheck-mode t)
+(global-linum-mode t)
 (global-whitespace-mode t)
 (beacon-mode t)
 (yas-global-mode t)
@@ -129,8 +131,6 @@
           #'(lambda ()
               (require 'restclient-jq)
               (setq jq-interactive-command (locate-file "jq" exec-path))))
-
-(add-hook 'prog-mode-hook 'linum-mode)
 
 ;; Custom Keybindings
 (global-set-key (kbd "C-x x") 'evil-mode)

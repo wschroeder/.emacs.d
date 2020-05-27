@@ -23,7 +23,13 @@
  '(custom-safe-themes
    (quote
     ("f9aede508e587fe21bcfc0a85e1ec7d27312d9587e686a6f5afdbb0d220eab50" default)))
+ '(deft-file-naming-rules
+    (quote
+     ((noslash . "-")
+      (nospace . "-")
+      (case-fn . downcase))))
  '(deft-markdown-mode-title-level 1)
+ '(deft-use-filter-string-for-filename t)
  '(delete-old-versions t)
  '(fill-column 120)
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
@@ -107,6 +113,9 @@
 
 (add-hook 'deft-mode-hook 'setup-deft-mode)
 
+
+;; Org-mode config
+(load "~/.emacs.d/org-mode.el")
 
 ;; Hooks
 (mapc (lambda (hook) (add-hook hook 'paredit-mode))

@@ -2,13 +2,13 @@
 
 (prefer-coding-system 'utf-8)
 
+(load "~/.emacs.d/packages.el")
+
 ;; Set frame size
 (when window-system
   (setq default-frame-alist `((width . 160)
                               (height . 47)))
-  (add-to-list 'exec-path "/usr/local/bin"))
-
-(load "~/.emacs.d/packages.el")
+  (exec-path-from-shell-initialize))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -41,7 +41,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)

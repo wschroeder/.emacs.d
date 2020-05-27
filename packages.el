@@ -19,8 +19,10 @@
                    cider
                    clojure-mode
                    clj-refactor
+                   dot-mode
                    elixir-mode
                    evil
+                   exec-path-from-shell
                    flycheck
                    flycheck-clojure
                    flycheck-pos-tip

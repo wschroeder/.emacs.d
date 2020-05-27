@@ -5,3 +5,5 @@
 /auto-save-list/
 /.mc-lists.el
 /network-security.data
+/.org-id-locations
+/eshell/

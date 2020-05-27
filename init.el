@@ -87,16 +87,25 @@
 (define-key ac-completing-map "\r" nil) ; no enter (2.)
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
 
+
 ;; Deft config
 (setq deft-default-extension "md")
+
 (defun new-log-for-today ()
   (interactive)
-  (let ((deft-default-extension "org"))
-    (execute-kbd-macro (kbd (concat "TODO:" (format-time-string "%F"))))
-    (deft-new-file)))
+  (deft-filter-clear)
+  (let ((deft-default-extension "org")
+        (today-name (concat "TODO:" (format-time-string "%F"))))
+    (execute-kbd-macro (kbd today-name))
+    (if (length (deft-current-files))
+        (deft-complete)
+      (deft-new-file))))
+
 (defun setup-deft-mode ()
-  (local-set-key (kbd "C-c C-n") 'new-log-for-today))
+  (local-set-key (kbd "C-c C-p") 'new-log-for-today))
+
 (add-hook 'deft-mode-hook 'setup-deft-mode)
+
 
 ;; Hooks
 (mapc (lambda (hook) (add-hook hook 'paredit-mode))

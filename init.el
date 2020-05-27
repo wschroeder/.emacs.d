@@ -23,6 +23,7 @@
  '(custom-safe-themes
    (quote
     ("f9aede508e587fe21bcfc0a85e1ec7d27312d9587e686a6f5afdbb0d220eab50" default)))
+ '(deft-markdown-mode-title-level 1)
  '(delete-old-versions t)
  '(fill-column 120)
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))

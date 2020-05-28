@@ -37,6 +37,7 @@
                    multiple-cursors
                    neotree
                    paredit
+                   powershell
                    projectile
                    restclient
                    uuidgen

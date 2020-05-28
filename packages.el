@@ -19,6 +19,8 @@
                    cider
                    clojure-mode
                    clj-refactor
+                   csv-mode
+                   default-text-scale
                    deft
                    dot-mode
                    elixir-mode

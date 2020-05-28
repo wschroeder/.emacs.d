@@ -49,7 +49,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient projectile neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -86,6 +86,7 @@
 (global-linum-mode t)
 (global-whitespace-mode t)
 (beacon-mode t)
+(default-text-scale-mode t)
 (yas-global-mode t)
 
 ;; Set modes to files
@@ -142,3 +143,4 @@
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key [f12] 'deft)
 
+(put 'narrow-to-region 'disabled nil)

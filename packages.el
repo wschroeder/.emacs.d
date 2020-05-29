@@ -29,6 +29,7 @@
                    flycheck
                    flycheck-clojure
                    flycheck-pos-tip
+                   helm-projectile
                    jq-mode
                    kibit-helper
                    magit

@@ -49,7 +49,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -87,6 +87,8 @@
 (global-whitespace-mode t)
 (beacon-mode t)
 (default-text-scale-mode t)
+(helm-mode t)
+(projectile-mode t)
 (yas-global-mode t)
 
 ;; Set modes to files
@@ -96,7 +98,6 @@
 (define-key ac-completing-map [return] nil) ; no enter (1.)
 (define-key ac-completing-map "\r" nil) ; no enter (2.)
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
-
 
 ;; Deft config
 (setq deft-default-extension "md")
@@ -116,6 +117,8 @@
 
 (add-hook 'deft-mode-hook 'setup-deft-mode)
 
+;; Helm-mode config
+(global-set-key (kbd "C-x C-n") 'helm-projectile)
 
 ;; Org-mode config
 (load "~/.emacs.d/org-mode.el")

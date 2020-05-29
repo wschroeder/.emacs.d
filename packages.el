@@ -38,7 +38,6 @@
                    neotree
                    paredit
                    powershell
-                   projectile
                    restclient
                    uuidgen
                    which-key

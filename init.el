@@ -4,10 +4,7 @@
 
 (load "~/.emacs.d/packages.el")
 
-;; Set frame size
-(when window-system
-  (setq default-frame-alist `((width . 160)
-                              (height . 47)))
+(when (not (eq window-system 'w32))
   (exec-path-from-shell-initialize))
 
 (custom-set-variables
@@ -79,6 +76,15 @@
 (require 'auto-highlight-symbol)
 
 (load-theme 'monokai t)
+
+;; Set frame size
+(when window-system
+  (let ((target-width (truncate (/ (* 0.85 (display-pixel-width))
+                                   (window-font-width))))
+        (target-height (truncate (/ (* 0.85 (display-pixel-height))
+                                    (window-font-height)))))
+    (set-frame-size (window-frame) target-width target-height)
+    (set-frame-position (window-frame) 4 4)))
 
 ;; Modes
 (global-auto-highlight-symbol-mode t)

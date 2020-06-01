@@ -117,6 +117,9 @@
 ;; Deft config
 (load "~/.emacs.d/deft.el")
 
+;; Eshell config
+(defalias 'ff 'find-file)
+
 ;; Helm-mode config
 (global-set-key (kbd "C-x C-n") 'helm-projectile)
 

@@ -16,6 +16,7 @@
                    auto-complete
                    auto-highlight-symbol
                    beacon
+                   centaur-tabs
                    cider
                    clojure-mode
                    clj-refactor

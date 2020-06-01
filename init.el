@@ -47,7 +47,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -93,6 +93,7 @@
 (global-linum-mode t)
 (global-whitespace-mode t)
 (beacon-mode t)
+(centaur-tabs-mode t)
 (default-text-scale-mode t)
 (helm-mode t)
 (projectile-mode t)
@@ -105,6 +106,12 @@
 (define-key ac-completing-map [return] nil) ; no enter (1.)
 (define-key ac-completing-map "\r" nil) ; no enter (2.)
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
+
+;; Centaur Tabs config
+(global-set-key (kbd "M-k") 'centaur-tabs-backward)
+(global-set-key (kbd "M-j") 'centaur-tabs-forward)
+(global-set-key (kbd "M-c") #'(lambda () (interactive)
+                                (kill-buffer (buffer-name))))
 
 ;; Deft config
 (load "~/.emacs.d/deft.el")

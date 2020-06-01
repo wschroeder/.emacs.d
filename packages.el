@@ -45,6 +45,7 @@
                    powershell
                    restclient
                    uuidgen
+                   vagrant-tramp
                    which-key
                    yaml-mode))
   (unless (package-installed-p package)

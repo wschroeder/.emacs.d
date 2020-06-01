@@ -22,6 +22,7 @@
                    csv-mode
                    default-text-scale
                    deft
+                   docker-tramp
                    dot-mode
                    elixir-mode
                    evil

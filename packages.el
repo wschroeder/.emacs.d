@@ -34,6 +34,8 @@
                    helm-projectile
                    jq-mode
                    kibit-helper
+                   kubernetes-helm
+                   kubernetes-tramp
                    magit
                    markdown-mode
                    monokai-theme

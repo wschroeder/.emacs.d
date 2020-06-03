@@ -122,6 +122,7 @@
 
 ;; Helm-mode config
 (global-set-key (kbd "C-x C-n") 'helm-projectile)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Org-mode config
 (load "~/.emacs.d/org-mode.el")

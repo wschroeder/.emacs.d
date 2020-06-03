@@ -91,4 +91,3 @@ it is on a headline, try all direct children. "
 
 (global-set-key (kbd "C-x C-l") 'find-today-deft-log)
 
-(add-hook 'deft-mode-hook 'setup-deft-mode)

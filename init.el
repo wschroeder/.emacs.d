@@ -16,6 +16,7 @@
  '(backup-by-copying t)
  '(backup-directory-alist (list (cons "." "~/.emacs.d/backups")))
  '(beacon-color "#ff00ff")
+ '(centaur-tabs-hide-tabs-hooks nil)
  '(column-number-mode t)
  '(create-lockfiles nil)
  '(custom-safe-themes
@@ -111,10 +112,7 @@
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
 
 ;; Centaur Tabs config
-(global-set-key (kbd "M-k") 'centaur-tabs-backward)
-(global-set-key (kbd "M-j") 'centaur-tabs-forward)
-(global-set-key (kbd "M-c") #'(lambda () (interactive)
-                                (kill-buffer (buffer-name))))
+(load "~/.emacs.d/centaur-tabs.el")
 
 ;; Deft config
 (load "~/.emacs.d/deft.el")

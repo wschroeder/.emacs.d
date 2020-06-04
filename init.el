@@ -140,7 +140,10 @@
 ;; Org-mode config
 (load "~/.emacs.d/org-mode.el")
 
-;; Hooks
+;; Yaml-mode config
+(load "~/.emacs.d/yaml-mode.el")
+
+;; hooks
 (mapc (lambda (hook) (add-hook hook 'paredit-mode))
       '(clojure-mode-hook
         emacs-lisp-mode-hook))

@@ -154,6 +154,6 @@
               (setq jq-interactive-command (locate-file "jq" exec-path))))
 
 ;; Machine-specific profile
-(if (file-exists-p "~/.emacs-local/init.el")
+(if (file-exists-p "~/.emacs-local.d/init.el")
     (load "~/.emacs-local.d/init.el"))
 

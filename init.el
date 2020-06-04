@@ -151,3 +151,8 @@
 (global-set-key [f12] 'deft)
 
 (put 'narrow-to-region 'disabled nil)
+
+;; Machine-specific profile
+(if (file-exists-p "~/.emacs-local/init.el")
+    (load "~/.emacs-local.d/init.el"))
+

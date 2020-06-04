@@ -65,6 +65,8 @@
  '(woman-fill-column 100)
  '(woman-fill-frame t))
 
+(put 'narrow-to-region 'disabled nil)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -120,9 +122,22 @@
 ;; Eshell config
 (defalias 'ff 'find-file)
 
+;; Evil mode
+(global-set-key (kbd "C-x x") 'evil-mode)
+
 ;; Helm-mode config
 (global-set-key (kbd "C-x C-n") 'helm-projectile)
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+;; Multiple Cursors
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-;") 'mc/mark-all-symbols-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; Neotree
+(global-set-key [f8] 'neotree-toggle)
 
 ;; Org-mode config
 (load "~/.emacs.d/org-mode.el")
@@ -139,18 +154,6 @@
           #'(lambda ()
               (require 'restclient-jq)
               (setq jq-interactive-command (locate-file "jq" exec-path))))
-
-;; Custom Keybindings
-(global-set-key (kbd "C-x x") 'evil-mode)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-;") 'mc/mark-all-symbols-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key [f8] 'neotree-toggle)
-(global-set-key [f12] 'deft)
-
-(put 'narrow-to-region 'disabled nil)
 
 ;; Machine-specific profile
 (if (file-exists-p "~/.emacs-local/init.el")

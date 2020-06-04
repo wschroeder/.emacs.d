@@ -90,4 +90,4 @@ it is on a headline, try all direct children. "
       (copy-and-find-deft-todos latest-entry today-entry))))
 
 (global-set-key (kbd "C-x C-l") 'find-today-deft-log)
-
+(global-set-key [f12] 'deft)

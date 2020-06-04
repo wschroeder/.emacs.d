@@ -48,7 +48,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (graphviz-dot-mode vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree markdown-mode magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -148,6 +148,7 @@
       '(elixir-mode-hook
         company-mode))
 
+(require 'jq-mode)
 (add-hook 'restclient-mode-hook
           #'(lambda ()
               (require 'restclient-jq)

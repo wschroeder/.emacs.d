@@ -1,12 +1,17 @@
 (require 'centaur-tabs)
 
+(defun centaur-tabs-hide-tab (x)
+  "Do no to show buffer X in tabs."
+  nil)
+
 (defun centaur-tabs-buffer-groups ()
   "`centaur-tabs-buffer-groups' control buffers' group rules."
   (list
    (cond
     ((or
       (member (buffer-name) '("*Completions*"
-                              "*Messages*"))
+                              "*Messages*"
+                              "*Apropos*"))
       (memq major-mode '(magit-process-mode
                          magit-status-mode
                          magit-diff-mode

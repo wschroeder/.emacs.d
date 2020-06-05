@@ -1,9 +1,5 @@
 (require 'centaur-tabs)
 
-(defun centaur-tabs-hide-tab (x)
-  "Do no to show buffer X in tabs."
-  nil)
-
 (defun centaur-tabs-buffer-groups ()
   "`centaur-tabs-buffer-groups' control buffers' group rules."
   (list

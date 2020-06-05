@@ -7,7 +7,13 @@
 (defmacro yaml-mode-until (condition &rest body)
   "Defines a repeat..until style loop wherein the body is
 executed at least once and the condition is checked after the
-first iteration for future iterations."
+first iteration for future iterations.
+
+Example:
+
+  (yaml-mode-until (condition-met)
+    (statement1)
+    (statement2))"
   `(progn ,@body
           (while ,condition ,@body)))
 

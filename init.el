@@ -118,6 +118,7 @@
 (load "~/.emacs.d/deft.el")
 
 ;; Eshell config
+(setenv "EDITOR" "emacsclient")
 (defalias 'ff 'find-file)
 
 ;; Evil mode

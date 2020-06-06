@@ -126,7 +126,6 @@
 
 ;; Helm-mode config
 (global-set-key (kbd "C-x C-n") 'helm-projectile)
-(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; Multiple Cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)

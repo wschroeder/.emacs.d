@@ -124,8 +124,36 @@
 ;; Evil mode
 (global-set-key (kbd "C-x x") 'evil-mode)
 
+;; Fun functions stolen from https://github.com/sroccaserra/emacs/blob/master/tools.el
+(defmacro comment (&rest body)
+  "Ignores body, yields nil"
+  nil)
+
+(defun sequence (maybe-seq)
+  "Returns the value wrapped in a sequence if it is not a sequence already."
+  (if (sequencep maybe-seq) maybe-seq
+    (list maybe-seq)))
+
+(defmacro -> (x &optional form &rest more)
+  (cond ((not (null more))
+         `(-> (-> ,x ,form) ,@more))
+        ((not (null form))
+         (if (sequencep form)
+             `(,(first form) ,x ,@(rest form))
+           (list form x)))
+        (t x)))
+
+(defmacro ->> (x form &rest more)
+  (cond ((not (null more)) `(->> (->> ,x ,form) ,@more))
+        (t (if (sequencep form)
+               `(,(first form) ,@(rest form) ,x)
+             (list form x)))))
+
 ;; Helm-mode config
 (global-set-key (kbd "C-x C-n") 'helm-projectile)
+
+;; Lisp interaction mode
+(define-key lisp-interaction-mode-map (kbd "C-c C-j") 'eval-print-last-sexp)
 
 ;; Multiple Cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)

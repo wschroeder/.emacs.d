@@ -26,5 +26,11 @@
 
 (global-set-key (kbd "M-k") 'centaur-tabs-backward)
 (global-set-key (kbd "M-j") 'centaur-tabs-forward)
-(global-set-key (kbd "M-c") #'(lambda () (interactive)
+(global-set-key (kbd "M-c") #'(lambda ()
+                                (interactive)
                                 (kill-buffer (buffer-name))))
+(global-set-key (kbd "M-n") #'(lambda ()
+                                (interactive)
+                                (switch-to-buffer (generate-new-buffer (concat "*"
+                                                                               (number-to-string (random 10000))
+                                                                               "*")))))

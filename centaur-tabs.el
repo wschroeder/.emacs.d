@@ -7,6 +7,7 @@
     ((or
       (member (buffer-name) '("*Completions*"
                               "*Messages*"
+                              "*Backtrace*"
                               "*Apropos*"))
       (memq major-mode '(magit-process-mode
                          magit-status-mode

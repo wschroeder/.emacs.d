@@ -20,6 +20,7 @@
                    cider
                    clojure-mode
                    clj-refactor
+                   csharp-mode
                    csv-mode
                    default-text-scale
                    deft

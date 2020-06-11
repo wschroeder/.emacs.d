@@ -22,7 +22,7 @@
     (t "Primary"))))
 
 (setq centaur-tabs-set-modified-marker t)
-(setq centaur-tabs-modified-marker "+")
+(setq centaur-tabs-modified-marker "♫")
 
 (global-set-key (kbd "M-k") 'centaur-tabs-backward)
 (global-set-key (kbd "M-j") 'centaur-tabs-forward)

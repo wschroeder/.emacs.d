@@ -120,6 +120,7 @@
 ;; Eshell config
 (setenv "EDITOR" "emacsclient")
 (defalias 'ff 'find-file)
+(global-set-key (kbd "C-x c") 'eshell)
 
 ;; Evil mode
 (global-set-key (kbd "C-x x") 'evil-mode)

@@ -119,6 +119,7 @@
 
 ;; Eshell config
 (setenv "EDITOR" "emacsclient")
+(setenv "GIT_EDITOR" "emacsclient")
 (defalias 'ff 'find-file)
 (global-set-key (kbd "C-x c") 'eshell)
 

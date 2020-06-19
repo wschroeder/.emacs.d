@@ -19,6 +19,9 @@
                          helm-mode
                          )))
      "Special")
+    ((or (memq major-mode '(ovpn-mode))
+         (string-suffix-p ".ovpn" (buffer-name)))
+     "Openvpn")
     (t "Primary"))))
 
 (setq centaur-tabs-set-modified-marker t)

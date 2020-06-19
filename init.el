@@ -99,6 +99,7 @@
 (beacon-mode t)
 (centaur-tabs-mode t)
 (default-text-scale-mode t)
+(global-undo-tree-mode t)
 (helm-mode t)
 (projectile-mode t)
 (yas-global-mode t)

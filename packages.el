@@ -44,6 +44,7 @@
                    multiple-cursors
                    neotree
                    paredit
+                   poly-markdown
                    powershell
                    restclient
                    uuidgen

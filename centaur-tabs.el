@@ -22,6 +22,8 @@
     ((or (memq major-mode '(ovpn-mode))
          (string-suffix-p ".ovpn" (buffer-name)))
      "Openvpn")
+    ((string-match-p "\\.md\\[.*\\]" (buffer-name))
+     "Poly-Markdown")
     (t "Primary"))))
 
 (setq centaur-tabs-set-modified-marker t)

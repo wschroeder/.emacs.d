@@ -34,6 +34,7 @@
                    flycheck-clojure
                    flycheck-pos-tip
                    graphviz-dot-mode
+                   groovy-mode
                    helm-projectile
                    jq-mode
                    kibit-helper

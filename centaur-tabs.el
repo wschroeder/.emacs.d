@@ -8,7 +8,8 @@
       (member (buffer-name) '("*Completions*"
                               "*Messages*"
                               "*Backtrace*"
-                              "*Apropos*"))
+                              "*Apropos*"
+                              "*alchemist-server*"))
       (memq major-mode '(magit-process-mode
                          magit-status-mode
                          magit-diff-mode

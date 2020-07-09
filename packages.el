@@ -25,6 +25,7 @@
                    default-text-scale
                    deft
                    docker-tramp
+                   dockerfile-mode
                    dot-mode
                    elixir-mode
                    evil

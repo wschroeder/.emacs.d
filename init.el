@@ -107,6 +107,9 @@
 ;; Set modes to files
 (add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))
 
+;; Alchemist config
+(load "~/.emacs.d/alchemist.el")
+
 ;; Autocomplete config
 (define-key ac-completing-map [return] nil) ; no enter (1.)
 (define-key ac-completing-map "\r" nil) ; no enter (2.)

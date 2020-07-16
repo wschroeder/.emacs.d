@@ -48,7 +48,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -120,6 +120,9 @@
 
 ;; Deft config
 (load "~/.emacs.d/deft.el")
+
+;; Elpy
+(elpy-enable)
 
 ;; Eshell config
 (setenv "EDITOR" "emacsclient")

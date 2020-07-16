@@ -28,6 +28,7 @@
                    dockerfile-mode
                    dot-mode
                    elixir-mode
+                   elpy
                    evil
                    exec-path-from-shell
                    flycheck
@@ -48,6 +49,7 @@
                    paredit
                    poly-markdown
                    powershell
+                   python-black
                    restclient
                    uuidgen
                    vagrant-tramp

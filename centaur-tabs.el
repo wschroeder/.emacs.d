@@ -41,3 +41,5 @@
                                 (switch-to-buffer (generate-new-buffer (concat "*"
                                                                                (number-to-string (random 10000))
                                                                                "*")))))
+(global-set-key (kbd "C-x <right>") 'centaur-tabs-move-current-tab-to-right)
+(global-set-key (kbd "C-x <left>") 'centaur-tabs-move-current-tab-to-left)

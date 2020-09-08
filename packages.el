@@ -16,6 +16,7 @@
                    auto-complete
                    auto-highlight-symbol
                    beacon
+                   blacken
                    centaur-tabs
                    cider
                    clojure-mode

@@ -48,7 +48,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (blacken python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -114,6 +114,12 @@
 (define-key ac-completing-map [return] nil) ; no enter (1.)
 (define-key ac-completing-map "\r" nil) ; no enter (2.)
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
+
+;; blacken
+(require 'blacken)
+(require 'python)
+(setq blacken-only-if-project-is-blackened t)
+(add-hook 'python-mode-hook 'blacken-mode)
 
 ;; Centaur Tabs config
 (load "~/.emacs.d/centaur-tabs.el")

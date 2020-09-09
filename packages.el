@@ -52,6 +52,7 @@
                    powershell
                    python-black
                    restclient
+                   ripgrep
                    uuidgen
                    vagrant-tramp
                    which-key

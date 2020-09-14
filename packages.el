@@ -50,11 +50,13 @@
                    paredit
                    poly-markdown
                    powershell
+                   pyenv-mode
                    python-black
                    restclient
                    ripgrep
                    uuidgen
                    vagrant-tramp
+                   virtualenvwrapper
                    which-key
                    yaml-mode))
   (unless (package-installed-p package)

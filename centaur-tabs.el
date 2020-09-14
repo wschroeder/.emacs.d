@@ -9,7 +9,8 @@
                               "*Messages*"
                               "*Backtrace*"
                               "*Apropos*"
-                              "*alchemist-server*"))
+                              "*alchemist-server*"
+                              "*Flymake log*"))
       (memq major-mode '(magit-process-mode
                          magit-status-mode
                          magit-diff-mode

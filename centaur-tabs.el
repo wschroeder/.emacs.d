@@ -10,7 +10,8 @@
                               "*Backtrace*"
                               "*Apropos*"
                               "*alchemist-server*"
-                              "*Flymake log*"))
+                              "*Flymake log*"
+                              "*elpy-virtualenv*"))
       (memq major-mode '(magit-process-mode
                          magit-status-mode
                          magit-diff-mode

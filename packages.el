@@ -51,6 +51,7 @@
                    poly-markdown
                    powershell
                    pyenv-mode
+                   pylint
                    python-black
                    restclient
                    ripgrep

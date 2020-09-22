@@ -130,7 +130,7 @@
 (load "~/.emacs.d/deft.el")
 
 ;; Elpy
-(setenv "PYTHONPATH" "/Users/wschroed/dev/elasticbox/src")
+(setenv "PYTHONPATH" (expand-file-name "~/Repositories/elasticbox/src"))
 (pyenv-mode)
 (elpy-enable)
 (let ((workon-home (expand-file-name "~/.pyenv/versions")))

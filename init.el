@@ -118,10 +118,11 @@
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
 
 ;; blacken
-(require 'blacken)
-(require 'python)
-(setq blacken-only-if-project-is-blackened t)
-(add-hook 'python-mode-hook 'blacken-mode)
+(when (executable-find "pyenv")
+  (load 'blacken)
+  (load 'python)
+  (setq blacken-only-if-project-is-blackened t)
+  (add-hook 'python-mode-hook 'blacken-mode))
 
 ;; Centaur Tabs config
 (load "~/.emacs.d/centaur-tabs.el")
@@ -130,12 +131,14 @@
 (load "~/.emacs.d/deft.el")
 
 ;; Elpy
-(setenv "PYTHONPATH" (expand-file-name "~/Repositories/elasticbox/src"))
-(pyenv-mode)
-(elpy-enable)
-(let ((workon-home (expand-file-name "~/.pyenv/versions")))
-  (setenv "WORKON_HOME" workon-home)
-  (setenv "VIRTUALENVWRAPPER_HOOK_DIR" workon-home))
+(when (executable-find "pyenv")
+  (load 'pyenv-mode)
+  (setenv "PYTHONPATH" (expand-file-name "~/Repositories/elasticbox/src"))
+  (pyenv-mode)
+  (elpy-enable)
+  (let ((workon-home (expand-file-name "~/.pyenv/versions")))
+    (setenv "WORKON_HOME" workon-home)
+    (setenv "VIRTUALENVWRAPPER_HOOK_DIR" workon-home)))
 
 ;; Eshell config
 (setenv "EDITOR" "emacsclient")

@@ -9,8 +9,7 @@
 (add-to-list 'load-path "~/.emacs.d/more-packages")
 (package-initialize)
 
-(unless package-archive-contents
-  (package-refresh-contents))
+(defvar need-package-update t)
 
 (dolist (package '(alchemist
                    auto-complete
@@ -61,5 +60,7 @@
                    which-key
                    yaml-mode))
   (unless (package-installed-p package)
+    (when need-package-update
+      (package-refresh-contents)
+      (setf need-package-update nil))
     (package-install package)))
-

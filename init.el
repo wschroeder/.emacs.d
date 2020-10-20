@@ -118,9 +118,10 @@
 (define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
 
 ;; blacken
-(when (executable-find "pyenv")
-  (load 'blacken)
-  (load 'python)
+(when (and (executable-find "pyenv")
+           (executable-find "black"))
+  (load "blacken")
+  (load "python")
   (setq blacken-only-if-project-is-blackened t)
   (add-hook 'python-mode-hook 'blacken-mode))
 
@@ -132,8 +133,9 @@
 
 ;; Elpy
 (when (executable-find "pyenv")
-  (load 'pyenv-mode)
-  (setenv "PYTHONPATH" (expand-file-name "~/Repositories/elasticbox/src"))
+  (load "pyenv-mode")
+  (when (file-exists-p "~/Repositories/elasticbox/src")
+    (setenv "PYTHONPATH" (expand-file-name "~/Repositories/elasticbox/src")))
   (pyenv-mode)
   (elpy-enable)
   (let ((workon-home (expand-file-name "~/.pyenv/versions")))

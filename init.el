@@ -34,6 +34,7 @@
  '(elpy-rpc-timeout 10)
  '(fill-column 120)
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
+ '(flycheck-temp-prefix "~/.emacs.d/flycheck/flycheck")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(kept-new-versions 20)

@@ -199,13 +199,21 @@
 ;; ripgrep
 (defalias 'rg 'ripgrep-regexp)
 
+;; Roswell Lisp
+(when (executable-find "ros")
+  (when (not (file-exists-p "~/.roswell/helper.el"))
+    (shell-command "ros install slime"))
+  (load (expand-file-name "~/.roswell/helper.el"))
+  (setq inferior-lisp-program "ros -Q run"))
+
 ;; Yaml-mode config
 (load "~/.emacs.d/yaml-mode.el")
 
 ;; hooks
 (mapc (lambda (hook) (add-hook hook 'paredit-mode))
       '(clojure-mode-hook
-        emacs-lisp-mode-hook))
+        emacs-lisp-mode-hook
+        lisp-mode-hook))
 (mapc (lambda (hook) (add-hook hook 'alchemist-mode))
       '(elixir-mode-hook
         company-mode))

@@ -12,6 +12,9 @@
                               "*alchemist-server*"
                               "*Flymake log*"
                               "*elpy-virtualenv*"))
+      (string-prefix-p "*vim*" (buffer-name))
+      (string-prefix-p "*cider-" (buffer-name))
+      (string-prefix-p "*nrepl-" (buffer-name))
       (memq major-mode '(magit-process-mode
                          magit-status-mode
                          magit-diff-mode

@@ -20,6 +20,7 @@
                    cider
                    clojure-mode
                    clj-refactor
+                   counsel-projectile
                    csharp-mode
                    csv-mode
                    default-text-scale
@@ -36,10 +37,9 @@
                    flycheck-pos-tip
                    graphviz-dot-mode
                    groovy-mode
-                   helm-projectile
+                   ivy
                    jq-mode
                    kibit-helper
-                   kubernetes-helm
                    kubernetes-tramp
                    magit
                    markdown-mode

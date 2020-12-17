@@ -51,7 +51,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (elixir-mode pylint virtualenvwrapper pyenv-mode ripgrep blacken python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode vagrant-tramp kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+    (elixir-mode pylint virtualenvwrapper pyenv-mode ripgrep blacken python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode vagrant-tramp kubernetes-tramp centaur-tabs docker-tramp powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -103,7 +103,7 @@
 (centaur-tabs-mode t)
 (default-text-scale-mode t)
 (global-undo-tree-mode t)
-(helm-mode t)
+(ivy-mode t)
 (projectile-mode t)
 (yas-global-mode t)
 
@@ -177,8 +177,8 @@
                `(,(first form) ,@(rest form) ,x)
              (list form x)))))
 
-;; Helm-mode config
-(global-set-key (kbd "C-x C-n") 'helm-projectile)
+;; Ivy-mode config
+(global-set-key (kbd "C-x C-n") 'counsel-projectile)
 
 ;; Lisp interaction mode
 (define-key lisp-interaction-mode-map (kbd "C-c C-j") 'eval-print-last-sexp)

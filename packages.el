@@ -45,6 +45,7 @@
                    markdown-mode
                    monokai-theme
                    multiple-cursors
+                   nhexl-mode
                    neotree
                    paredit
                    poly-markdown

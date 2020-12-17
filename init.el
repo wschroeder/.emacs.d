@@ -177,6 +177,9 @@
                `(,(first form) ,@(rest form) ,x)
              (list form x)))))
 
+;; ibuffer instead of buffer-menu
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 ;; Ivy-mode config
 (global-set-key (kbd "C-x C-n") 'counsel-projectile)
 

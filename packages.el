@@ -55,6 +55,7 @@
                    python-black
                    restclient
                    ripgrep
+                   undo-tree
                    uuidgen
                    vagrant-tramp
                    virtualenvwrapper

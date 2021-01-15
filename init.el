@@ -7,6 +7,9 @@
 (when (not (eq window-system 'w32))
   (exec-path-from-shell-initialize))
 
+(if (not (file-exists-p "~/.emacs.d/flycheck/"))
+    (make-directory "~/.emacs.d/flycheck/"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

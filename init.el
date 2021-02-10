@@ -90,12 +90,14 @@
 
 ;; Set frame size
 (when window-system
-  (let ((target-width (truncate (/ (* 0.85 (display-pixel-width))
-                                   (window-font-width))))
-        (target-height (truncate (/ (* 0.85 (display-pixel-height))
-                                    (window-font-height)))))
-    (set-frame-size (window-frame) target-width target-height)
-    (set-frame-position (window-frame) 4 4)))
+  (cl-destructuring-bind (x y width height)
+    (frame-monitor-workarea)
+    (let ((target-width (truncate (/ (* 0.85 width)
+                                     (window-font-width))))
+          (target-height (truncate (/ (* 0.85 height)
+                                      (window-font-height)))))
+      (set-frame-size (window-frame) target-width target-height)
+      (set-frame-position (window-frame) (+ x 4) (+ y 4)))))
 
 ;; Modes
 (global-auto-highlight-symbol-mode t)

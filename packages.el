@@ -57,7 +57,6 @@
                    ripgrep
                    undo-tree
                    uuidgen
-                   vagrant-tramp
                    virtualenvwrapper
                    which-key
                    yaml-mode))

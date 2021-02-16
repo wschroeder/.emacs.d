@@ -221,7 +221,12 @@
 (mapc (lambda (hook) (add-hook hook 'paredit-mode))
       '(clojure-mode-hook
         emacs-lisp-mode-hook
-        lisp-mode-hook))
+        lisp-mode-hook
+        slime-repl-mode-hook))
+(mapc (lambda (hook) (add-hook hook 'company-mode))
+      '(elixir-mode-hook
+        alchemist-mode-hook
+        alchemist-iex-mode-hook))
 
 (require 'jq-mode)
 (add-hook 'restclient-mode-hook

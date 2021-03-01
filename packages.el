@@ -55,6 +55,7 @@
                    python-black
                    restclient
                    ripgrep
+                   uml-mode
                    undo-tree
                    uuidgen
                    virtualenvwrapper

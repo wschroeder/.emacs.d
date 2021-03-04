@@ -48,6 +48,7 @@
                    nhexl-mode
                    neotree
                    paredit
+                   php-mode
                    poly-markdown
                    powershell
                    pyenv-mode

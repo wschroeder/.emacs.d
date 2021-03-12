@@ -156,10 +156,13 @@
 
 ;; Evil mode
 (global-set-key (kbd "C-x x") 'evil-mode)
+(require 'evil)
 (mapc (lambda (exclude-vim-from-this-mode)
         (evil-set-initial-state exclude-vim-from-this-mode 'emacs))
       '(lisp-mode
-        magit-mode))
+        magit-mode
+        package-menu-mode
+        deft-mode))
 
 ;; Fun functions stolen from https://github.com/sroccaserra/emacs/blob/master/tools.el
 (defmacro comment (&rest body)

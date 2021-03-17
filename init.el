@@ -35,6 +35,9 @@
  '(delete-old-versions t)
  '(elpy-rpc-ignored-buffer-size 200000)
  '(elpy-rpc-timeout 10)
+ '(evil-ex-search-vim-style-regexp t)
+ '(evil-shift-width 2)
+ '(evil-undo-system (quote undo-tree))
  '(fill-column 120)
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
  '(flycheck-temp-prefix "~/.emacs.d/flycheck/flycheck")
@@ -166,7 +169,22 @@
         magit-mode
         package-menu-mode
         deft-mode
-        Info-mode))
+        Info-mode
+        eshell-mode))
+
+(mapc (lambda (function-to-vimmify)
+        (advice-add function-to-vimmify :around
+                    #'(lambda (fn &rest args)
+                        (let ((table (copy-syntax-table (syntax-table))))
+                          (modify-syntax-entry ?_ "w" table)
+                          (with-syntax-table table
+                            (apply fn args))))))
+      '(evil-forward-word-begin
+        evil-forward-word-end
+        evil-backward-word-begin
+        evil-backward-word-end
+        evil-select-an-object
+        evil-select-inner-object))
 
 (require 'markdown-mode)
 (evil-make-overriding-map markdown-mode-map 'normal)

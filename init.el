@@ -23,13 +23,8 @@
  '(column-number-mode t)
  '(create-lockfiles nil)
  '(custom-safe-themes
-   (quote
-    ("f9aede508e587fe21bcfc0a85e1ec7d27312d9587e686a6f5afdbb0d220eab50" default)))
- '(deft-file-naming-rules
-    (quote
-     ((noslash . "-")
-      (nospace . "-")
-      (case-fn . downcase))))
+   '("f9aede508e587fe21bcfc0a85e1ec7d27312d9587e686a6f5afdbb0d220eab50" default))
+ '(deft-file-naming-rules '((noslash . "-") (nospace . "-") (case-fn . downcase)))
  '(deft-markdown-mode-title-level 1)
  '(deft-use-filter-string-for-filename t)
  '(delete-old-versions t)
@@ -37,27 +32,25 @@
  '(elpy-rpc-timeout 10)
  '(evil-ex-search-vim-style-regexp t)
  '(evil-shift-width 2)
- '(evil-undo-system (quote undo-tree))
+ '(evil-undo-system 'undo-tree)
  '(fill-column 120)
- '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
+ '(flycheck-disabled-checkers '(emacs-lisp-checkdoc))
  '(flycheck-temp-prefix "~/.emacs.d/flycheck/flycheck")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(kept-new-versions 20)
  '(kept-old-versions 5)
- '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
+ '(magit-log-arguments '("--graph" "--color" "--decorate" "-n256"))
  '(org-babel-load-languages
-   (quote
-    ((emacs-lisp . t)
+   '((emacs-lisp . t)
      (shell . t)
      (dot . t)
      (plantuml . t)
      (python . t)
-     (sql . t))))
+     (sql . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   (quote
-    (evil php-mode uml-mode vagrant nhexl-mode elixir-mode pylint virtualenvwrapper pyenv-mode ripgrep blacken python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent)))
+   '(evil php-mode uml-mode vagrant nhexl-mode elixir-mode pylint virtualenvwrapper pyenv-mode ripgrep blacken python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode kubernetes-helm kubernetes-tramp centaur-tabs docker-tramp helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent))
  '(python-indent-offset 2)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -66,11 +59,10 @@
  '(tool-bar-mode nil)
  '(tramp-remote-shell-executable "sh")
  '(truncate-lines t)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
  '(whitespace-style
-   (quote
-    (face trailing tabs indentation space-after-tab space-before-tab tab-mark)))
+   '(face trailing tabs indentation space-after-tab space-before-tab tab-mark))
  '(woman-bold-headings t)
  '(woman-fill-column 100)
  '(woman-fill-frame t))
@@ -82,7 +74,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Fira Code")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "FiraCode Nerd Font")))))
 
 (server-start)
 

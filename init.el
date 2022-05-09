@@ -7,6 +7,22 @@
 (when (not (eq window-system 'w32))
   (exec-path-from-shell-initialize))
 
+(when (featurep 'ns)
+  (defun ns-raise-emacs ()
+    "Raise Emacs."
+    (ns-do-applescript "tell application \"System Events\" to tell process \"emacs\" to set frontmost to true"))
+
+  (defun ns-raise-emacs-with-frame (frame)
+    "Raise Emacs and select the provided frame."
+    (with-selected-frame frame
+      (when (display-graphic-p)
+        (ns-raise-emacs))))
+
+  (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
+
+  (when (display-graphic-p)
+    (ns-raise-emacs)))
+
 (if (not (file-exists-p "~/.emacs.d/flycheck/"))
     (make-directory "~/.emacs.d/flycheck/"))
 

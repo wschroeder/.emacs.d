@@ -234,7 +234,7 @@
 ;; Roswell Lisp
 (when (executable-find "ros")
   (when (not (file-exists-p "~/.roswell/helper.el"))
-    (shell-command "ros install slime"))
+    (shell-command "ros install sly"))
   (load (expand-file-name "~/.roswell/helper.el"))
   (setq inferior-lisp-program "ros -Q run"))
 
@@ -246,7 +246,7 @@
       '(clojure-mode-hook
         emacs-lisp-mode-hook
         lisp-mode-hook
-        slime-repl-mode-hook))
+        sly-mrepl-mode-hook))
 (mapc (lambda (hook) (add-hook hook 'company-mode))
       '(elixir-mode-hook
         alchemist-mode-hook

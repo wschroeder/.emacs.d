@@ -25,6 +25,9 @@
                          helm-mode
                          )))
      "Special")
+    ((or (member (buffer-name) '("*inferior-lisp*"))
+         (string-prefix-p "*sly-" (buffer-name)))
+     "Sly")
     ((or (memq major-mode '(ovpn-mode))
          (string-suffix-p ".ovpn" (buffer-name)))
      "Openvpn")

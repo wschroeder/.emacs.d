@@ -11,7 +11,8 @@
                               "*Apropos*"
                               "*alchemist-server*"
                               "*Flymake log*"
-                              "*elpy-virtualenv*"))
+                              "*elpy-virtualenv*"
+                              "*Async-native-compile-log*"))
       (string-prefix-p "*vim*" (buffer-name))
       (string-prefix-p "*cider-" (buffer-name))
       (string-prefix-p "*nrepl-" (buffer-name))

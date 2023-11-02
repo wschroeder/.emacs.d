@@ -113,7 +113,7 @@
 ;; Modes
 (global-auto-highlight-symbol-mode t)
 (global-flycheck-mode t)
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
 (global-whitespace-mode t)
 (beacon-mode t)
 (centaur-tabs-mode t)

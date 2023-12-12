@@ -25,7 +25,6 @@
                    csv-mode
                    default-text-scale
                    deft
-                   docker-tramp
                    dockerfile-mode
                    dot-mode
                    elixir-mode
@@ -40,7 +39,6 @@
                    ivy
                    jq-mode
                    kibit-helper
-                   kubernetes-tramp
                    magit
                    markdown-mode
                    monokai-theme

@@ -7,12 +7,14 @@
     ((or
       (member (buffer-name) '("*Completions*"
                               "*Messages*"
+                              "*Warnings*"
                               "*Backtrace*"
                               "*Apropos*"
                               "*alchemist-server*"
                               "*Flymake log*"
                               "*elpy-virtualenv*"
-                              "*Async-native-compile-log*"))
+                              "*Async-native-compile-log*"
+                              "*projectile-files-errors*"))
       (string-prefix-p "*vim*" (buffer-name))
       (string-prefix-p "*cider-" (buffer-name))
       (string-prefix-p "*nrepl-" (buffer-name))

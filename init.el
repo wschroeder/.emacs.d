@@ -2,6 +2,10 @@
 
 (prefer-coding-system 'utf-8)
 
+;; Untrusted repos: an `eval:' in a file or a .dir-locals.el must not run on open.
+(setq enable-local-variables :safe)
+(setq enable-dir-local-variables nil)
+
 (load "~/.emacs.d/packages.el")
 
 (when (not (eq window-system 'w32))
@@ -64,7 +68,6 @@
      (plantuml . t)
      (python . t)
      (sql . t)))
- '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    '(evil php-mode uml-mode vagrant nhexl-mode elixir-mode pylint virtualenvwrapper pyenv-mode ripgrep blacken python-black elpy groovy-mode dockerfile-mode poly-markdown csharp-mode graphviz-dot-mode kubernetes-helm centaur-tabs helm-projectile helm powershell default-text-scale csv-mode deft dot-mode exec-path-from-shell yasnippet yaml-mode which-key uuidgen restclient neotree magit kibit-helper flycheck-pos-tip flycheck-clojure flycheck monokai-theme clj-refactor cider beacon auto-highlight-symbol auto-complete aggressive-indent))
  '(python-indent-offset 2)
